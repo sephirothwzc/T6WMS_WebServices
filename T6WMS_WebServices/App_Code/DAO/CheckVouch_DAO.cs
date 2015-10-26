@@ -58,15 +58,14 @@ namespace DAO
                 string code = (Convert.ToInt32(dcode.cCVCode) + 1).ToString();
 
                 CheckVouch.cCVCode = code.PadLeft(10, '0');
-                CheckVouch.ID = ua_identity.iFatherId;
+                CheckVouch.ID = ++ua_identity.iFatherId;
 
                 //子表赋值
                 CheckVouch.CheckVouchsS.ForEach(p =>
                 {
                     p.ID = CheckVouch.ID;
-                    p.autoID = Convert.ToInt32(ua_identity.iChildId);
+                    p.autoID = Convert.ToInt32(++ua_identity.iChildId);
                     p.cCVCode = CheckVouch.cCVCode;
-                    ua_identity.iChildId = ua_identity.iChildId + 1;
                     //更新现存量
                     sql = @"select isnull(iQuantity,0)  iQuantity from CurrentStock where cInvCode = @cInvCode and cWhCode=@cWhCode";
                     var sl = this.QueryDynamic(sql, new { cInvCode = p.cInvCode, cWhCode = CheckVouch.cWhCode }, dbtran).FirstOrDefault();

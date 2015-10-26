@@ -108,7 +108,7 @@ namespace Entity
 
         
         /// <summary>
-        /// 
+        /// 单据编号
         /// </summary>
         [Column("cCode")]
         [MaxLength(30)]
@@ -117,7 +117,7 @@ namespace Entity
 
         
         /// <summary>
-        /// 
+        /// 出入库类型
         /// </summary>
         [Column("cRdCode")]
         [MaxLength(5)]
@@ -125,7 +125,7 @@ namespace Entity
 
         
         /// <summary>
-        /// 
+        /// 部门编号（出库用）
         /// </summary>
         [Column("cDepCode")]
         [MaxLength(12)]

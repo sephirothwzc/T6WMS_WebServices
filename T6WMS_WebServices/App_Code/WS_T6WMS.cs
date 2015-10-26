@@ -88,4 +88,25 @@ public class WS_T6WMS : System.Web.Services.WebService {
     {
         return new DAO.Vendor_DAO().Query(param: new Vendor()).ToList();
     }
+
+    /// <summary>
+    /// 出入库类别
+    /// </summary>
+    /// <param name="brdflag"></param>
+    /// <returns></returns>
+    [WebMethod]
+    public List<Entity.Rd_Style> QueryRd_Style(int brdflag)
+    {
+        return new DAO.Rd_Style_DAO().Query(param: new Rd_Style { bRdFlag = brdflag }).ToList();
+    }
+
+    /// <summary>
+    /// 获取部门主数据
+    /// </summary>
+    /// <returns></returns>
+    [WebMethod]
+    public List<Entity.Department> QueryDepartment()
+    {
+        return new DAO.Department_DAO().Query(param: new Department()).ToList();
+    }
 }
