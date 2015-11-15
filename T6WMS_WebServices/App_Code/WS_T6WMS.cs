@@ -97,7 +97,7 @@ public class WS_T6WMS : System.Web.Services.WebService {
     [WebMethod]
     public List<Entity.Rd_Style> QueryRd_Style(int brdflag)
     {
-        return new DAO.Rd_Style_DAO().Query(param: new Rd_Style { bRdFlag = brdflag }).ToList();
+        return new DAO.Rd_Style_DAO().Query(param: new Rd_Style { bRdFlag = brdflag , bRdEnd = true }).ToList();
     }
 
     /// <summary>

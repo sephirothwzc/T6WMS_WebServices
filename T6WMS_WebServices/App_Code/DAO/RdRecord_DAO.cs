@@ -59,6 +59,7 @@ namespace DAO
                 ua_identity.iFatherId = ua_identity.iFatherId + 1;
                 rdRecord.ID = Convert.ToInt32(ua_identity.iFatherId);
                 rdRecord.cSource = "库存";
+                rdRecord.dDate = Convert.ToDateTime(DateTime.Now.ToString("YYYY-MM-DD 00:00:00"));
                 //子表赋值
                 rdRecord.rds.ForEach(p => 
                 {

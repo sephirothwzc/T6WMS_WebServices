@@ -59,7 +59,8 @@ namespace DAO
 
                 CheckVouch.cCVCode = code.PadLeft(10, '0');
                 CheckVouch.ID = ++ua_identity.iFatherId;
-
+                CheckVouch.dACDate = DateTime.Now;
+                CheckVouch.dCVDate = DateTime.Now;
                 //子表赋值
                 CheckVouch.CheckVouchsS.ForEach(p =>
                 {
